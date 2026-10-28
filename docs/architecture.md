@@ -76,3 +76,15 @@ Search-grounded API answers dominate the bill at about $0.016–0.021 each; cons
 - Row-level security on every client table; the console uses the public key only.
 - The service-role key and all model API keys live only in the backend environment, never in the frontend or the repository.
 - Raw answers and client data stay out of Git (see `.gitignore`).
+
+## Risks
+
+| Risk | Mitigation |
+|---|---|
+| Terms of service on consumer-app capture | Licensed providers only, disclosed method, API-only fallback |
+| API answers differ from what users see | Separate instrument labels; consumer surface as the headline |
+| Answer volatility | Probability metrics, 28-day windows, intervals, change alerts |
+| Unproven optimization levers | Evidence labels on every action; experiments before claims |
+| API churn and price changes | Adapter layer, versioned engine registry, raw archive, monthly price review |
+| Client sites silently blocking AI bots | Access audit before any content work |
+| Parser error in sentiment and entities | Gold sets, kappa gates, re-checks after model changes |

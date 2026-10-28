@@ -40,13 +40,18 @@ To deploy, connect the repository to Netlify. [`netlify.toml`](netlify.toml) pub
 ## Repository layout
 
 ```
-demo/              Clickable client-console demo (static HTML)
-docs/
-  methodology.md   Metric definitions, statistics, experiment protocol
-  architecture.md  Collection instruments, pipeline, data model, cost model
-  roadmap.md       90-day build plan
+AGENTS.md          Project context for AI coding agents (CLAUDE.md points here)
+demo/              Clickable client console demo (static HTML)
 db/
   schema.sql       Draft Postgres (Supabase) schema
+docs/
+  methodology.md   Metric definitions, statistics, experiment protocol
+  architecture.md  Collection instruments, pipeline, data model, cost model, risks
+  scope/scope.md   Living plan: features by phase and their status
+  specs/           Decision specs, one per feature that needs a decision
+  reviews/         Code and verification reviews
+  releases/        Release notes
+  postmortems/     Incident write-ups
 netlify.toml       Static deploy config for the demo
 ```
 
@@ -56,4 +61,8 @@ Python collection and analysis jobs on Railway, Postgres on Supabase with row-le
 
 ## Status
 
-The demo is complete. The platform itself is in the design stage; [docs/roadmap.md](docs/roadmap.md) sets out the build order.
+The demo is complete. The platform itself is in the design stage; [docs/scope/scope.md](docs/scope/scope.md) is the living plan and tracks each feature's status.
+
+## Working on this repo
+
+The repo follows the [jsmastery-pro/skills](https://github.com/jsmastery-pro/skills) agentic workflow, where project state lives in files: `/scope` keeps the plan in `docs/scope/`, `/architect` writes decision specs to `docs/specs/`, `/develop` builds to a spec, `/check` writes to `docs/reviews/`, and `/document` writes to `docs/releases/` and `docs/postmortems/`. Start with the first unticked box in the scope.
